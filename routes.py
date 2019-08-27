@@ -24,6 +24,8 @@ def about():
   
 @app.route("/signup", methods=['GET', 'POST'])
 def signup():
+  if 'email' in session:
+    return redirect(url_for('home'))
   form = SignupForm()
   
   if request.method == 'POST':
@@ -64,9 +66,15 @@ def login():
   elif request.method == 'GET':
     return render_template('login.html', form=form)
 
+@app.route("/logout")
+def logout():
+  session.pop('email', None)
+  return redirect(url_for('index'))
 
 @app.route("/home")
 def home():
+  if 'email' not in session:
+    return redirect(url_for('login'))
   return render_template('home.html')
 
 
