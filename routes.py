@@ -5,7 +5,7 @@ from forms import SignupForm, LoginForm
 app = Flask(__name__)
 
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:mercedez@localhost/learning_flask'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:mercedez/learning_flask'
 db.init_app(app)
 
 
