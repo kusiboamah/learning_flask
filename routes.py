@@ -4,8 +4,9 @@ from forms import SignupForm, LoginForm
 
 app = Flask(__name__)
 
+credentials = 'postgres://rqldpmvbnzsbqu:899892a027fd8bb38774d8b8fec809433a419fd2d3c85d690b3fd21b38496e16@ec2-23-21-156-171.compute-1.amazonaws.com:5432/df3e53a9pjebip'
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://DATABASE_URL'
+app.config['SQLALCHEMY_DATABASE_URI'] = credentials
 db.init_app(app)
 
 
