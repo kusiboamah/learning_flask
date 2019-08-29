@@ -13,3 +13,7 @@ class LoginForm(Form):
     email = StringField('Email', validators=[DataRequired(), Email("Please enter correct email address.")])
     password = PasswordField('Password', validators=[DataRequired("Please enter a password.")])
     submit = SubmitField("Sign in")
+    
+class AddressFrom(Form):
+    address = StringField('Address', validators=[DataRequired("Please Enter Address")])
+    submit = SubmitField("search")
